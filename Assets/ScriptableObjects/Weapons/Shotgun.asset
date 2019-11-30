@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: Shotgun
   m_EditorClassIdentifier: Assembly-CSharp::WeaponStats
-  reloadSpeed: 1
+  reloadSpeed: 1.5
   bulletsPerClip: 9
-  curBulletsInClip: 9
-  damage: 35
-  fireRate: 1
+  curBulletsInClip: 1
+  damage: 100
+  fireRate: 0.6
   maxAmmo: 100
-  currAmmo: 20
+  currAmmo: 9
   Weapon: {fileID: 2936854787056651510, guid: d3495672c5fcfbe43b9e6aae0c843243, type: 3}
   bullet: {fileID: 4453418549061396211, guid: 769f883405558004c8748b4b440d653d, type: 3}
   bulletSpawnPoint: {x: 0.009, y: 0.11, z: 0.926}

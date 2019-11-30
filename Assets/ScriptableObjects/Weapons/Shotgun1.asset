@@ -13,14 +13,14 @@ MonoBehaviour:
   m_Name: Shotgun1
   m_EditorClassIdentifier: 
   reloadSpeed: 1
-  bulletsPerClip: 9
-  curBulletsInClip: 9
+  bulletsPerClip: 15
+  curBulletsInClip: 7
   damage: 35
-  fireRate: 1
-  maxAmmo: 100
-  currAmmo: 20
+  fireRate: 0.3
+  maxAmmo: 150
+  currAmmo: 15
   Weapon: {fileID: 2936854787056651510, guid: d480544de61bc004c9a54e22e3b8ce61, type: 3}
   bullet: {fileID: 4453418549061396211, guid: 769f883405558004c8748b4b440d653d, type: 3}
   bulletSpawnPoint: {x: 0.009, y: 0.11, z: 0.926}
-  singleFireMode: 1
-  fullAutoFireMode: 0
+  singleFireMode: 0
+  fullAutoFireMode: 1
