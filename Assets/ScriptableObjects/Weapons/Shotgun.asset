@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: Shotgun
+  m_EditorClassIdentifier: Assembly-CSharp::WeaponStats
+  reloadSpeed: 1
+  bulletsPerClip: 9
+  curBulletsInClip: 9
+  damage: 35
+  fireRate: 1
+  maxAmmo: 100
+  currAmmo: 20
+  Weapon: {fileID: 2936854787056651510, guid: d3495672c5fcfbe43b9e6aae0c843243, type: 3}
+  bullet: {fileID: 4453418549061396211, guid: 769f883405558004c8748b4b440d653d, type: 3}
+  bulletSpawnPoint: {x: 0.009, y: 0.11, z: 0.926}
+  singleFireMode: 1
+  fullAutoFireMode: 0

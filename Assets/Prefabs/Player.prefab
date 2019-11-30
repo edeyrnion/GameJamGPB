@@ -139,11 +139,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae1c9bc6bdb36db4db807a2d7ae912eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _walkingSpeed: 10
-  _walkingReactionTime: 0
+  _walkingSpeed: 8
+  _walkingReactionTime: 0.3
+  _handRight: {fileID: 9133826308796749826}
   _groundLayer:
     serializedVersion: 2
     m_Bits: 1024
+  _weaponStats:
+  - {fileID: 11400000, guid: f76825e2e52298745ac1a43343a87580, type: 2}
+  - {fileID: 11400000, guid: 0af313c65b33bd44a85caddba2fe5b35, type: 2}
+  _weapons: []
 --- !u!1 &9133826307535736491
 GameObject:
   m_ObjectHideFlags: 0
