@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 9133826307311755740}
   - component: {fileID: 9133826307311755743}
   - component: {fileID: 9133826307311755742}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -103,7 +103,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9133826307532277026}
   - component: {fileID: 9133826307532277027}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -160,7 +160,7 @@ GameObject:
   - component: {fileID: 9133826307535736488}
   - component: {fileID: 9133826307535736495}
   - component: {fileID: 9133826307535736494}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Nose
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -236,7 +236,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9133826308796749826}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: HandR
   m_TagString: Untagged
   m_Icon: {fileID: 0}

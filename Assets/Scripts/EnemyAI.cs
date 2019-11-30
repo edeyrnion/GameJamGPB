@@ -8,11 +8,12 @@ public class EnemyAI : MonoBehaviour
     [Tooltip("Enable AI")]
     [SerializeField] private bool on = true;
     [SerializeField] private EnemyAIController aiController;
+    [SerializeField] private LayerMask layerMask;
 
     [Header("Movement")]
 
     [Tooltip("Distance until target can be seen. 0=disabled"), Range(0f, 100f)]
-    [SerializeField] private float visionRadius = 100.0f;
+    [SerializeField] private float visionDistance = 100.0f;
 
     [Tooltip("If the AI should keep a distance to the target")]
     [SerializeField] private bool keepDistance = false;
@@ -54,6 +55,8 @@ public class EnemyAI : MonoBehaviour
 
     void Start()
     {
+        target = GameObject.FindWithTag("Player").transform;
+
         initialGo = true;
     }
 
@@ -81,6 +84,8 @@ public class EnemyAI : MonoBehaviour
         lastVisTargetPos = target.position;
         float distanceToTarget = Vector3.Distance(transform.position, target.position);
         Vector3 moveAway = (transform.position - lastVisTargetPos).normalized * keepDistanceAmount;
+
+        Debug.Log("Distance1=" + distanceToTarget);
 
         // target found
         if (TargetIsInSight())
@@ -124,7 +129,7 @@ public class EnemyAI : MonoBehaviour
     {
         float buffer = 1f;
         float distance = Vector3.Distance(transform.position, destination);
-        
+
         if ((!keepDistance && distance > buffer) || (keepDistance && (distance - buffer) > keepDistanceAmount))
         {
             aiController.MoveTo(destination);
@@ -134,21 +139,26 @@ public class EnemyAI : MonoBehaviour
     // verify AI can see the target
     private bool TargetIsInSight()
     {
-        return true;
-
-        Debug.Log("check if target in sight");
-        //determine if the enemy should be doing anything other than standing still
-        //aiEnabled = !((moveableRadius > 0) && (Vector3.Distance(transform.position, target.position) > moveableRadius));
+        Debug.Log("Distance2=" + Vector3.Distance(transform.position, target.position));
 
         // check if target is in vision range
-        // visualRadius = 0 -> ignore this check
-        if ((visionRadius > 0) && (Vector3.Distance(transform.position, target.position) > visionRadius))
+        if (visionDistance == 0 || Vector3.Distance(transform.position, target.position) > visionDistance)
         {
             return false;
         }
 
         // check nothing is blocking the line of sight
         RaycastHit sight;
+        bool visionObstructed = Physics.Linecast(transform.position, target.position, out sight, layerMask);
+
+        if (!visionObstructed)
+        {
+            Debug.Log("player found");
+            playerHasBeenSeen = true;
+            return true;
+        }
+
+        return false;
 
         if (Physics.Linecast(transform.position, target.position, out sight))
         {
@@ -160,8 +170,6 @@ public class EnemyAI : MonoBehaviour
             return sight.transform == target;
         }
 
-        Debug.Log("no target found");
-        return false;
     }
 
     // target tracking
