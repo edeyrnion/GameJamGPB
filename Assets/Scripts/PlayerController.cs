@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private LayerMask _groundLayer;
 
     [SerializeField] private List<WeaponStats> _weaponStats;
-    [SerializeField] private List<GameObject> _weapons;
+    private List<GameObject> _weapons = new List<GameObject>();
 
     private float axisX;
     private float axisY;
@@ -83,6 +83,20 @@ public class PlayerController : MonoBehaviour
                 ReloadWeapon();
                 _weaponReloadTimer = Time.time;
             }
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "AmmoPickUp")
+        {
+            Debug.Log("AmmoPickUp");
+
+            _weaponStats[_curWeapon].currAmmo += 30;
+            LabelManager.Ammo = _weaponStats[_curWeapon].currAmmo;
+
+            other.gameObject.SetActive(false);
+            Destroy(other.gameObject);
         }
     }
 
