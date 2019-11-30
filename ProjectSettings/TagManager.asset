@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - AmmoPickUp
+  - Enemy
   layers:
   - Default
   - TransparentFX
